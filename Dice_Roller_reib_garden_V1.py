@@ -4,8 +4,7 @@
 ##-------------------##
 
 
-#shoop di woop
- Work---Reid-Sucks
+
 #----Functions start here----#
 
 import random
