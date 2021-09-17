@@ -4,5 +4,14 @@
 ##-------------------##
 
 
+#shoop di woop
+ Work---Reid-Sucks
+#----Functions start here----#
 
-shoop di woop
+import random
+
+def welcome:
+    print("Hello! and welcome to Reib and Gardens Dice Roller!")
+
+
+
