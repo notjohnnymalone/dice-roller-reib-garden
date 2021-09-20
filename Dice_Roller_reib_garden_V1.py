@@ -8,6 +8,7 @@
 #----Functions start here----#
 
 import random
+import time
 
 #SirRipher_Patch_1
 def dice_roll(x):
@@ -44,18 +45,17 @@ def dice_start():
 def welcome():
     print("Hello! and welcome to Reib and Gardens Dice Roller!")
 
-#reid edit 1
 def player_select():
     rorg = 0
-    print("Who do you want to play as?/nGarden or Reib?")
+    print(f"Who do you want to play as?\nGarden or Reib?")
     player = input(">>> ")
-    if player = ['graden', 'garden', 'gar', 'Graden', 'GRADEN', 'Garden', 'GARDEN','Gar', 'GAR', 'dumbbum']:
+    if player == 'graden'or player =='garden' or player == 'gar' or player == 'Graden' or player ==  'GRADEN' or player == 'Garden' or player == 'GARDEN' or player == 'Gar' or player == 'GAR' or player == 'dumbbum' or player == 'g' or player == 'G' or player == '1':
         rorg = 1
-        print("You have chosen Graden.../nIf you didn't.../n/nshut up.")
+        print(f"You have chosen Graden...\nIf you didn't...\n\nshut up.")
     else:
         rorg = 2
         print("You have chosen Reid.")
-        time.sleep(3)
+        time.sleep(1)
         print("if you didn't...")
-        time.sleep(3)
+        time.sleep(2)
         print("i don't care.")
