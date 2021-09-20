@@ -9,11 +9,11 @@
 
 import random
 
-def welcome:
+def welcome():
     print("Hello! and welcome to Reib and Gardens Dice Roller!")
 
 #reid edit 1
-def player_select:
+def player_select():
     rorg = 0
     print("Who do you want to play as?/nGarden or Reib?")
     player = input(">>> ")
