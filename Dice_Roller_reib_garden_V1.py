@@ -9,6 +9,38 @@
 
 import random
 
+#SirRipher_Patch_1
+def dice_roll(x):
+    import random
+    roll = random.randint(x * 1, x * 6)
+    return random.randint(x * 1, x * 6)
+
+def win(x, y):
+    win_by = x - y
+    return x - y
+
+def lose(x, y):
+    lose_by = x - y
+    return x - y
+
+def welcome():
+    print("Hello! and welcome to Reib and Gardens Dice Roller!")
+    dice_start()
+    
+def dice_start():
+    try:
+        dice_1 = int(input("How many Dice are you using to lose? "))
+        ###
+        human = dice_roll(dice_1)
+        print(f"You got {human}.")
+        ###
+        robot = dice_roll(dice_1)
+        print(f"The Robot got {robot}.")
+        
+    except:
+        print("Please type a number.")
+        dice_start()
+
 def welcome():
     print("Hello! and welcome to Reib and Gardens Dice Roller!")
 
