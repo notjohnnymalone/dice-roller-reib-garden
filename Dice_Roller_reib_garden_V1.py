@@ -10,6 +10,7 @@
 import random
 import time
 
+play = 0
 #SirRipher_Patch_1
 def dice_roll(x):
     import random
@@ -26,32 +27,37 @@ def lose(x, y):
 
 def welcome():
     print("Hello! and welcome to Reib and Gardens Dice Roller!")
-    dice_start()
+ #   player_select()
     
 def dice_start():
+    if player_select() == 1:
+        player = "Garden"
+        computer = "Reib"
+    
+    else:
+        player = "Reib"
+        computer = "Garden"
     try:
-        dice_1 = int(input("How many Dice are you using to lose? "))
+        dice_1 = int(input(f"How many Dice are you using to lose? \n>>> "))
         ###
         human = dice_roll(dice_1)
-        print(f"You got {human}.")
+        print(f"{player} got {human}.")
         ###
         robot = dice_roll(dice_1)
-        print(f"The Robot got {robot}.")
+        print(f"{computer} got {robot}.")
         
     except:
         print("Please type a number.")
         dice_start()
 
-def welcome():
-    print("Hello! and welcome to Reib and Gardens Dice Roller!")
 
 def player_select():
     rorg = 0
     print(f"Who do you want to play as?\nGarden or Reib?")
     player = input(">>> ")
     if player == 'graden'or player =='garden' or player == 'gar' or player == 'Graden' or player ==  'GRADEN' or player == 'Garden' or player == 'GARDEN' or player == 'Gar' or player == 'GAR' or player == 'dumbbum' or player == 'g' or player == 'G' or player == '1':
-        rorg = 1
         print(f"You have chosen Graden...\nIf you didn't...\n\nshut up.")
+        return (rorg + 1)
     else:
         rorg = 2
         print("You have chosen Reid.")
@@ -59,3 +65,12 @@ def player_select():
         print("if you didn't...")
         time.sleep(2)
         print("i don't care.")
+        return (rorg + 2)
+    
+
+
+
+
+welcome()
+while play == 0:
+     dice_start()
