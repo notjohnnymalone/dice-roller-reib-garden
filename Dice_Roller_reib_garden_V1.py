@@ -10,24 +10,17 @@
 import random
 import time
 
-play = 0
+
 #SirRipher_Patch_1
 def dice_roll(x):
-    import random
     roll = random.randint(x * 1, x * 6)
     return random.randint(x * 1, x * 6)
 
-def win(x, y):
-    win_by = x - y
-    return x - y
 
-def lose(x, y):
-    lose_by = x - y
-    return x - y
 
 def welcome():
     print("Hello! and welcome to Reib and Gardens Dice Roller!")
- #   player_select()
+
     
 def dice_start():
     if player_select() == 1:
@@ -45,7 +38,16 @@ def dice_start():
         ###
         robot = dice_roll(dice_1)
         print(f"{computer} got {robot}.")
-        
+        if human > robot:
+            print(f"{player}(you) won!")
+            print("You won by", human - robot)
+        elif human < robot:
+            print(f"{robot} won, you lost")
+            print("You lost by", robot - human)
+        elif human == robot:
+            print("You tied.")
+            time.sleep(1)
+            print("thats dumb.")
     except:
         print("Please type a number.")
         dice_start()
@@ -67,10 +69,27 @@ def player_select():
         print("i don't care.")
         return (rorg + 2)
     
+def repeat():
+    print("Do you want to try again?")
+    rep_inp = input(">>> ")
+    if rep_inp == "yes" or rep_inp == "y":
+        print("Alright! Here we go!")
+    elif rep_inp == "no" or rep_inp == "n":
+        print("Thanks for playing!")
+        time.sleep(2)
+        print("you poor loser")
+        time.sleep(2)
+        quit()
+    else:
+        print("yes or no dummy")
+        time.sleep(1)
+        repeat()
 
-
-
+##main code
 
 welcome()
-while play == 0:
-     dice_start()
+
+while 1:
+    dice_start()
+    repeat()
+
